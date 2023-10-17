@@ -23,6 +23,6 @@ btn.onclick=function(){
 //=====================================================
 let btnHome=document.querySelector(".btn-home")
 btnHome.addEventListener("click" , ()=>{
-    location.href="../index_main.html";
+    location.href="../index.html";
 })
 

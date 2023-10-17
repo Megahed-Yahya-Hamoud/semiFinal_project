@@ -130,7 +130,6 @@ let toastBox=document.getElementById("toastBox")
 
 function addFavorite(){
     let favorite=document.querySelectorAll(".add-favorite")
-    let x=JSON.parse(localStorage.getItem("userobj"))||[];
     favorite.forEach(btn =>{
     btn.addEventListener("click" , function(){
         const parent=this.closest(".country")
@@ -152,6 +151,7 @@ function addFavorite(){
             
             showToastAdd();
             // console.log(favoriteNav)
+            
         }
         btn.remove();
         parent.querySelector(".fav-heart").innerHTML+='<i class="fa-solid fa-heart" style="color: #ff0000; opacity:1; "></i>'
