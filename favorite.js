@@ -1,9 +1,6 @@
 let  favoriteNav=JSON.parse(localStorage.getItem("favoriteNav")) || [];
-const favorite=document.querySelector(".cart tbody") 
-let removeAll=document.querySelector(".remove-all")
-let removeEle=document.querySelectorAll(".remove")
-
-element();
+let favorite=document.querySelector(".cart tbody") 
+// console.log(removeAll);
     favoriteNav.forEach( country => {
         favorite.innerHTML+=`
         
@@ -24,21 +21,28 @@ element();
         `
     });
 
+    let removeEle=document.querySelectorAll(".remove")
+element();
+
     function element(){
 
            removeEle.forEach((btn)=>{
+
             btn.addEventListener("click" , function(){
-                const parent=this.closest(".country")
+                const parent=this.closest(".cart-country")
+                console.log(parent);
                 const id=parent.dataset.id;
                 favoriteNav=favoriteNav.filter(ele=>ele.id != id);
                 parent.remove();
             
            })
         })
+            let removeAll=document.querySelector(".remove-all")
             removeAll.addEventListener("click" , ()=>{
                 favoriteNav=[];
                 localStorage.setItem("favoriteNav" ,JSON.stringify(favoriteNav));
-                favorite.innerHTML+=``;
+                favorite.innerHTML=``;
+                console.log(favorite);
             })  
     }
 
