@@ -126,6 +126,11 @@ let toastBox=document.getElementById("toastBox")
         close.addEventListener("click",()=>{
             toast.remove();
           })
+          setTimeout(()=>{
+              toastBox.remove();
+
+          },6000)
+
       }
 
 function addFavorite(){
@@ -190,6 +195,10 @@ let toastBox=document.getElementById("toastBox")
         close.addEventListener("click",()=>{
             toast.remove();
           })
+          setTimeout(()=>{
+            toastBox.remove();
+
+        },6000)
       }
         showToast();
 
